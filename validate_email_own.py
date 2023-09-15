@@ -43,7 +43,7 @@ def verifying2(recipient_email, id_num):
         service.users().messages().send(userId='me', body={'raw': raw_msg}).execute()
 
     except HttpError as error:
-        printf("-", id_num)
+        printf("-", id_num, error)
         return False
     
     except Exception as E:
